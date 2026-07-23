@@ -82,12 +82,46 @@ section { padding: 110px 24px; max-width: 1180px; margin: 0 auto; }
 }
 .nav nav a:hover { color: var(--text); }
 .nav-right { display: flex; align-items: center; gap: 14px; }
-.lang {
-  all: unset; cursor: pointer; font-family: var(--mono); font-size: 13px;
-  color: var(--amber); border: 1px solid var(--line); border-radius: 8px;
-  padding: 6px 12px; transition: border-color .15s;
+/* езикови мини дек-клавиши: сегмент от 4, активният «натиснат» и свети */
+.lang-keys {
+  display: flex; gap: 3px; padding: 3px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.25));
 }
-.lang:hover { border-color: var(--amber); }
+.lang-keys button {
+  all: unset; cursor: pointer; font-family: var(--mono); font-size: 12px;
+  color: color-mix(in srgb, var(--amber) 55%, #777);
+  padding: 5px 9px; border-radius: 7px; line-height: 1;
+  border: 1px solid transparent;
+  transition: color .15s, background .15s, box-shadow .15s, transform .1s;
+}
+.lang-keys button:hover { color: var(--amber); }
+.lang-keys button.on {
+  color: var(--amber);
+  background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(255,255,255,.05));
+  border-color: color-mix(in srgb, var(--amber) 45%, transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--amber) 35%, transparent),
+              inset 0 2px 4px rgba(0,0,0,.6);
+  transform: translateY(1px);   /* натиснат клавиш */
+}
+
+/* тост «сайтът е на вашия език» */
+.lang-toast {
+  position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%) translateY(8px);
+  z-index: 90; display: flex; align-items: center; gap: 12px;
+  font-family: var(--mono); font-size: 13px; color: var(--amber);
+  background: color-mix(in srgb, var(--bg) 88%, black); border: 1px solid var(--line);
+  border-radius: 12px; padding: 11px 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.5);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s;
+}
+.lang-toast.show { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.lang-toast button {
+  all: unset; cursor: pointer; color: color-mix(in srgb, var(--amber) 60%, #888);
+  font-size: 15px; padding: 2px 4px;
+}
+.lang-toast button:hover { color: var(--amber); }
 
 .cta {
   display: inline-block; text-decoration: none; cursor: pointer;

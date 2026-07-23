@@ -274,8 +274,26 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
 let lang = localStorage.getItem("tt_lang") || "bg";
 
 const LANGS = ["bg", "en", "ru", "es"];
-const LANG_LABEL = { bg: "БГ", en: "EN", ru: "RU", es: "ES" };
 if (!LANGS.includes(lang)) lang = "bg";
+
+/* първо посещение: езикът на браузъра избира версията.
+   ru покрива и постсъветските региони (укр., каз., ...) — там ru е
+   най-честият втори език; всичко останало извън bg/es пада на en. */
+const RU_SPHERE = ["ru", "uk", "be", "kk", "ky", "uz", "tg", "tk", "az", "hy", "ka", "mo"];
+function detectLang() {
+  for (const tag of (navigator.languages || [navigator.language || ""])) {
+    const p = tag.toLowerCase().split("-")[0];
+    if (p === "bg") return "bg";
+    if (p === "es") return "es";
+    if (RU_SPHERE.includes(p)) return "ru";
+    if (p === "en") return "en";
+  }
+  return "en";
+}
+let autoDetected = null;
+if (!localStorage.getItem("tt_lang")) {
+  lang = autoDetected = detectLang();
+}
 
 function applyLang() {
   document.documentElement.lang = lang;
@@ -284,16 +302,32 @@ function applyLang() {
     const key = el.dataset.i18n;
     el.innerHTML = (dict && dict[key] !== undefined) ? dict[key] : bgOriginals[key];
   });
-  document.getElementById("langBtn").textContent = LANG_LABEL[lang];
+  document.querySelectorAll("#langKeys button").forEach(b =>
+    b.classList.toggle("on", b.dataset.lang === lang));
   localStorage.setItem("tt_lang", lang);
   showFn(activeFn, false);   // екранът на дека — на новия език
   updateCalc();              // суфикс на часовете спрямо езика
   if (typeof baText !== "undefined" && baText) baText.innerHTML = (BA[lang] || BA.bg)[(baPhase + 2) % 3];
 }
-document.getElementById("langBtn").addEventListener("click", () => {
-  lang = LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length];
-  applyLang();
-});
+document.querySelectorAll("#langKeys button").forEach(b =>
+  b.addEventListener("click", () => { lang = b.dataset.lang; applyLang(); }));
+
+/* тост при авто-избор: казваме на човека, че сме му дали неговия език,
+   и къде са другите — на неговия език, ненатрапчиво, само първия път */
+if (autoDetected && autoDetected !== "bg") {
+  const TOAST = {
+    en: "🌐 Showing the site in English — БГ · RU · ES up top",
+    ru: "🌐 Сайт показан на русском — БГ · EN · ES сверху",
+    es: "🌐 Mostramos el sitio en español — БГ · EN · RU arriba",
+  };
+  const t = document.createElement("div");
+  t.className = "lang-toast";
+  t.innerHTML = `<span>${TOAST[autoDetected]}</span><button aria-label="Close">✕</button>`;
+  document.body.appendChild(t);
+  t.querySelector("button").addEventListener("click", () => t.classList.remove("show"));
+  setTimeout(() => t.classList.add("show"), 900);
+  setTimeout(() => t.classList.remove("show"), 9000);
+}
 
 /* ── декът: клавиш → описание на «екрана» ─────────────── */
 let activeFn = "dictation";
