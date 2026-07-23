@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TapeType — Just Tape your Type</title>
+<meta name="description" content="Диктовка, коректор, преводач и глас — 6 инструмента под един покрив. Гласът ти не напуска компютъра.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;900&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='14' width='56' height='36' rx='8' fill='%23ff6b3d'/%3E%3Ccircle cx='22' cy='32' r='8' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Ccircle cx='42' cy='32' r='8' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top">
+    <svg class="brand-cassette" viewBox="0 0 64 44" aria-hidden="true">
+      <rect x="1" y="1" width="62" height="42" rx="7" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle class="reel" cx="21" cy="20" r="7" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3.5 3.5"/>
+      <circle class="reel" cx="43" cy="20" r="7" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3.5 3.5"/>
+      <line x1="10" y1="35" x2="54" y2="35" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <span class="wordmark">Tap<span class="wm-e"><i>e</i></span><span class="tt">Typ<span class="wm-e"><i>e</i></span></span><span class="wm-tape"></span></span>
+  </a>
+  <nav>
+    <a href="#roof" data-i18n="nav_features">Функции</a>
+    <a href="#speed" data-i18n="nav_speed">Скорост</a>
+    <a href="#compare" data-i18n="nav_compare">Сравнение</a>
+    <a href="#faq" data-i18n="nav_faq">Въпроси</a>
+  </nav>
+  <div class="nav-right">
+    <button class="lang" id="langBtn" aria-label="Language">EN</button>
+    <a class="cta small" href="#download" data-i18n="nav_download">Изтегли за Windows</a>
+  </div>
+</header>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="kicker" data-i18n="hero_kicker">КАСЕТАТА СЕ ВЪРТИ. ТИ САМО ГОВОРИШ.</p>
+    <h1>
+      <span data-i18n="hero_line1">Не пиши.</span><br>
+      <span class="accent" data-i18n="hero_line2">Говори.</span>
+    </h1>
+    <p class="tagline">Just <b>Tape</b> your <b>Type</b>.</p>
+    <p class="sub" data-i18n="hero_sub">Диктовка, коректор, преводач и жив глас — шест професионални инструмента под един покрив, във всяко приложение на Windows. А гласът ти не напуска компютъра.</p>
+    <div class="hero-cta">
+      <a class="cta" href="#download" data-i18n="hero_cta">Изтегли за Windows</a>
+      <a class="cta ghost" href="#how" data-i18n="hero_cta2">Виж как работи</a>
+      <span class="cta-note" data-i18n="hero_note">Безплатна диктовка · 14 дни пълен Премиум · без карта</span>
+    </div>
+  </div>
+
+  <!-- голямата въртяща се касета: v2 — реалистична, прозрачно-оранжева,
+       леко наклонена назад, с течаща лента и променящи се намотки -->
+  <div class="cassette-stage" aria-hidden="true">
+    <div class="c3d-tilt">
+    <svg class="cassette3d" viewBox="0 0 460 300">
+      <defs>
+        <linearGradient id="shellG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ff8a5e" stop-opacity=".30"/>
+          <stop offset=".45" stop-color="#ff6b3d" stop-opacity=".16"/>
+          <stop offset="1" stop-color="#c24e2a" stop-opacity=".26"/>
+        </linearGradient>
+        <radialGradient id="discG">
+          <stop offset=".55" stop-color="#221a14"/>
+          <stop offset=".8" stop-color="#191310"/>
+          <stop offset="1" stop-color="#120d0a"/>
+        </radialGradient>
+        <clipPath id="shellClip"><rect x="10" y="8" width="440" height="270" rx="24"/></clipPath>
+        <!-- лентата се вижда САМО в тъмния прозорец, никога върху оранжевото -->
+        <clipPath id="winClip"><rect x="58" y="50" width="344" height="128" rx="12"/></clipPath>
+      </defs>
+
+      <!-- корпус: прозрачно оранжево -->
+      <rect x="10" y="8" width="440" height="270" rx="24" fill="url(#shellG)"
+            stroke="rgba(255,150,100,.55)" stroke-width="2"/>
+      <rect x="18" y="16" width="424" height="254" rx="18" fill="none"
+            stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+
+      <!-- прозорецът с намотките -->
+      <rect x="58" y="50" width="344" height="128" rx="12" fill="#120e0b"
+            stroke="rgba(255,255,255,.10)" stroke-width="1.5"/>
+
+      <!-- ВСИЧКО вътре е клипнато към прозореца: лентата никога не пъпли
+           върху оранжевото. Ред на рисуване: първо лентата (тъмна основа +
+           течаща нишка), после намотките (тъмните дискове ПОКРИВАТ вътрешната
+           част на лентата — тя се показва точно от ръба на навитата ролка),
+           най-отгоре главините. -->
+      <g clip-path="url(#winClip)">
+        <!-- Двата диагонала следят ДОПИРАТЕЛНАТА към ролката: началната точка
+             на всяка лента се движи по ръба на окръжността в синхрон с
+             растежа/свиването ѝ, затова ъгълът гони допирателната. Всичко е в
+             .wind групата -> общият фейд крие скока при рестарт на цикъла.
+             Лявата НАВИВА (пунктир тече нагоре към ролката), дясната РАЗВИВА
+             (пунктир тече надолу към отвора). Видимо само в черния прозорец. -->
+        <g class="wind">
+          <!-- фейдът е SMIL на СЪЩИЯ часовник като навиването: скокът при
+               рестарта по конструкция става при opacity 0 (CSS анимацията
+               вървеше на отделен часовник -> разфазиране -> видим скок) -->
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.09;0.9;1"
+                   dur="26s" repeatCount="indefinite"/>
+          <!-- дясна лента към долния ДЕСЕН ъгъл (430,258); допирателна точка
+               (352,94)@r47 -> (333,100)@r27 -->
+          <path class="tape-base" d="M352 94 L430 258" fill="none" stroke="#17110d" stroke-width="5">
+            <animate attributeName="d" values="M352 94 L430 258;M333 100 L430 258" dur="26s" repeatCount="indefinite"/>
+          </path>
+          <path class="tape-flow" d="M352 94 L430 258" fill="none" stroke="rgba(255,170,120,.7)" stroke-width="1.7" stroke-dasharray="9 8">
+            <animate attributeName="d" values="M352 94 L430 258;M333 100 L430 258" dur="26s" repeatCount="indefinite"/>
+          </path>
+          <!-- лява лента към долния ЛЯВ ъгъл (30,258); допирателна точка
+               (127,100)@r27 -> (107,94)@r47; път отвор->ролка (пунктир нагоре) -->
+          <path class="tape-base" d="M30 258 L127 100" fill="none" stroke="#17110d" stroke-width="5">
+            <animate attributeName="d" values="M30 258 L127 100;M30 258 L107 94" dur="26s" repeatCount="indefinite"/>
+          </path>
+          <path class="tape-flow" d="M30 258 L127 100" fill="none" stroke="rgba(255,170,120,.7)" stroke-width="1.7" stroke-dasharray="9 8">
+            <animate attributeName="d" values="M30 258 L127 100;M30 258 L107 94" dur="26s" repeatCount="indefinite"/>
+          </path>
+
+          <!-- навива ЛЯВАТА (пълни се 27->47), развива ДЯСНАТА (47->27) -->
+          <circle class="pancake" cx="150" cy="114" fill="url(#discG)">
+            <animate attributeName="r" values="27;47" keyTimes="0;1" dur="26s" repeatCount="indefinite"/>
+          </circle>
+          <circle class="pancake" cx="310" cy="114" fill="url(#discG)">
+            <animate attributeName="r" values="47;27" keyTimes="0;1" dur="26s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- главини със зъбци (върху всичко; въртят се В ЕДНА ПОСОКА, като лентата) -->
+      <g class="hub hub-l">
+        <circle cx="150" cy="114" r="14" fill="#ece5da"/>
+        <circle cx="150" cy="114" r="5.5" fill="#c9bfae"/>
+        <g stroke="#b7ac99" stroke-width="3" stroke-linecap="round">
+          <line x1="150" y1="102.5" x2="150" y2="107"/>
+          <line x1="150" y1="121" x2="150" y2="125.5"/>
+          <line x1="138.5" y1="114" x2="143" y2="114"/>
+          <line x1="157" y1="114" x2="161.5" y2="114"/>
+        </g>
+      </g>
+      <g class="hub hub-r">
+        <circle cx="310" cy="114" r="14" fill="#ece5da"/>
+        <circle cx="310" cy="114" r="5.5" fill="#c9bfae"/>
+        <g stroke="#b7ac99" stroke-width="3" stroke-linecap="round">
+          <line x1="310" y1="102.5" x2="310" y2="107"/>
+          <line x1="310" y1="121" x2="310" y2="125.5"/>
+          <line x1="298.5" y1="114" x2="303" y2="114"/>
+          <line x1="317" y1="114" x2="321.5" y2="114"/>
+        </g>
+      </g>
+
+      <!-- етикет -->
+      <rect x="76" y="188" width="308" height="44" rx="7" fill="#efe7d8"/>
+      <rect x="76" y="188" width="308" height="11" rx="5" fill="#ff6b3d" opacity=".85"/>
+      <text x="92" y="221" font-family="JetBrains Mono, monospace" font-size="14"
+            fill="#3a2d22" letter-spacing="3">TAPETYPE — SIDE A</text>
+
+      <!-- долният трапец -->
+      <path d="M118 278 L136 240 Q139 234 147 234 L313 234 Q321 234 324 240 L342 278 Z"
+            fill="rgba(18,14,11,.55)" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+
+      <!-- винтчета: горните дребни; долните два са целите на лентата (по-едри) -->
+      <g fill="#141010" stroke="#54483c" stroke-width="1.4">
+        <circle cx="30" cy="28" r="5"/><circle cx="430" cy="28" r="5"/>
+      </g>
+      <g fill="#0d0a08" stroke="#4a3f34" stroke-width="1.5">
+        <circle cx="30" cy="258" r="8"/><circle cx="430" cy="258" r="8"/>
+      </g>
+
+      <!-- отблясъци по прозрачния корпус -->
+      <g clip-path="url(#shellClip)">
+        <rect class="glint g1" x="-80" y="-20" width="46" height="340"
+              fill="rgba(255,255,255,.10)" transform="skewX(-18)"/>
+        <rect class="glint g2" x="-160" y="-20" width="18" height="340"
+              fill="rgba(255,255,255,.07)" transform="skewX(-18)"/>
+      </g>
+    </svg>
+    </div>
+    <div class="cassette-glow"></div>
+  </div>
+
+  <!-- v1 (плоската рисувана касета) — пази се за връщане при нужда -->
+  <template id="cassette-v1">
+    <svg class="cassette" viewBox="0 0 420 270">
+      <rect x="6" y="6" width="408" height="258" rx="22" class="shell"/>
+      <rect x="30" y="30" width="360" height="120" rx="12" class="window"/>
+      <g class="reel-group left">
+        <circle cx="130" cy="90" r="42" class="reel-ring"/>
+        <g class="reel-spokes">
+          <line x1="130" y1="58" x2="130" y2="122"/>
+          <line x1="98" y1="90" x2="162" y2="90"/>
+          <line x1="107" y1="67" x2="153" y2="113"/>
+          <line x1="153" y1="67" x2="107" y2="113"/>
+        </g>
+        <circle cx="130" cy="90" r="14" class="reel-hub"/>
+      </g>
+      <g class="reel-group right">
+        <circle cx="290" cy="90" r="26" class="reel-ring"/>
+        <g class="reel-spokes">
+          <line x1="290" y1="70" x2="290" y2="110"/>
+          <line x1="270" y1="90" x2="310" y2="90"/>
+          <line x1="276" y1="76" x2="304" y2="104"/>
+          <line x1="304" y1="76" x2="276" y2="104"/>
+        </g>
+        <circle cx="290" cy="90" r="14" class="reel-hub"/>
+      </g>
+      <path class="tape-run" d="M130 132 L130 168 Q130 178 140 178 L280 178 Q290 178 290 168 L290 116"/>
+      <rect x="120" y="180" width="180" height="30" rx="6" class="label-strip"/>
+      <text x="138" y="201" class="label-text">A · TAPETYPE</text>
+      <path class="trapez" d="M120 264 L138 224 Q141 218 149 218 L271 218 Q279 218 282 224 L300 264 Z"/>
+      <circle cx="150" cy="248" r="5" class="hole"/>
+      <circle cx="270" cy="248" r="5" class="hole"/>
+    </svg>
+  </template>
+</section>
+
+<!-- лента-текст като магнетофонна лента -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track">
+    <span data-i18n="ribbon">здравей запетая изпращам ти офертата днес… → Здравей, изпращам ти офертата днес. &nbsp;·&nbsp; ъъъ среща в 2… всъщност 3 → Среща в 3. &nbsp;·&nbsp; одно ябълки две банани → 1. Ябълки 2. Банани &nbsp;·&nbsp; </span>
+    <span data-i18n="ribbon">здравей запетая изпращам ти офертата днес… → Здравей, изпращам ти офертата днес. &nbsp;·&nbsp; ъъъ среща в 2… всъщност 3 → Среща в 3. &nbsp;·&nbsp; одно ябълки две банани → 1. Ябълки 2. Банани &nbsp;·&nbsp; </span>
+  </div>
+</div>
+
+<!-- ═══════════════ КАК РАБОТИ — 3 СТЪПКИ ═══════════════ -->
+<section class="how" id="how">
+  <h2 data-i18n="how_title">От сваляне до първата диктовка — 3 минути</h2>
+  <div class="how-steps">
+    <article class="hstep">
+      <b class="hnum">01</b>
+      <h3 data-i18n="h1t">Свали и инсталирай</h3>
+      <p data-i18n="h1d">Един инсталатор, без настройки, без карта. При първото пускане моделът се сваля еднократно.</p>
+    </article>
+    <article class="hstep">
+      <b class="hnum">02</b>
+      <h3 data-i18n="h2t">Натисни клавиша</h3>
+      <p data-i18n="h2d">Където и да пишеш — имейл, чат, документ — натисни ALT+WIN. Барът светва: записва.</p>
+    </article>
+    <article class="hstep">
+      <b class="hnum">03</b>
+      <h3 data-i18n="h3t">Говори</h3>
+      <p data-i18n="h3d">Кажи го както ти идва. Текстът се появява изчистен, с пунктуация, без „ъъъ“ — готов за изпращане.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ═══════════════ ПОД ЕДИН ПОКРИВ ═══════════════ -->
+<section class="roof" id="roof">
+  <h2 data-i18n="roof_title">Шест инструмента.<br>Един дек.</h2>
+  <p class="section-sub" data-i18n="roof_sub">Другите правят по едно нещо. TapeType е швейцарското ножче на гласа — всяка функция на един клавиш разстояние, във всяко приложение.</p>
+
+  <div class="deck-panel">
+    <div class="deck-cap">·&nbsp;&nbsp;FULL LOGIC VOICE CONTROL&nbsp;&nbsp;·</div>
+    <div class="deck-keys">
+      <button class="dkey" style="--led:#ff5c5c" data-fn="dictation">
+        <span class="led"></span><span class="dglyph">⏺</span>
+        <b data-i18n="k1">Диктовка</b><kbd>ALT+WIN</kbd>
+      </button>
+      <button class="dkey" style="--led:#ffb454" data-fn="corrector">
+        <span class="led"></span><span class="dglyph">✎</span>
+        <b data-i18n="k2">Коректор</b><kbd>F8</kbd>
+      </button>
+      <button class="dkey" style="--led:#5cc8ff" data-fn="translator">
+        <span class="led"></span><span class="dglyph">⇄</span>
+        <b data-i18n="k3">Преводач</b><kbd>F5</kbd>
+      </button>
+      <button class="dkey" style="--led:#6fdc8c" data-fn="reader">
+        <span class="led"></span><span class="dglyph">▶</span>
+        <b data-i18n="k4">Текст → глас</b><kbd>F4</kbd>
+      </button>
+      <button class="dkey" style="--led:#c39bff" data-fn="dictionary">
+        <span class="led"></span><span class="dglyph">✦</span>
+        <b data-i18n="k5">Речник</b><kbd>AI</kbd>
+      </button>
+      <button class="dkey" style="--led:#ffe066" data-fn="snippets">
+        <span class="led"></span><span class="dglyph">⚡</span>
+        <b data-i18n="k6">Снипети</b><kbd data-i18n="k6kbd">глас</kbd>
+      </button>
+    </div>
+    <div class="deck-screen">
+      <p id="deckScreenText" data-i18n="fn_dictation">Говориш във ВСЯКО приложение — текстът се появява изчистен: без „ъъъ“, самопоправките приложени, пунктуацията на място. Имейлите излизат форматирани като писма.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ СКОРОСТ ═══════════════ -->
+<section class="speed" id="speed">
+  <h2 data-i18n="speed_title">Мисълта е по-бърза от пръстите</h2>
+  <p class="section-sub" data-i18n="speed_sub">Средният човек съчинява на клавиатура с ~25 думи в минута. Говори с над 120. TapeType връща разликата в живота ти.</p>
+  <div class="speed-race">
+    <div class="lane">
+      <div class="lane-head"><span data-i18n="lane1">Клавиатура</span><b>25 <i data-i18n="wpm">думи/мин</i></b></div>
+      <div class="bar slow"><i></i></div>
+    </div>
+    <div class="lane">
+      <div class="lane-head"><span>TapeType</span><b>120+ <i data-i18n="wpm">думи/мин</i></b></div>
+      <div class="bar fast"><i></i></div>
+    </div>
+  </div>
+  <div class="counters">
+    <div class="counter">
+      <b data-count="5">0</b><span data-i18n="c1">пъти по-бързо от писане</span>
+      <i class="csrc" data-i18n="c1s">срещу ~25 думи/мин съчиняване на клавиатура (Karat et al.)</i>
+    </div>
+    <div class="counter">
+      <b data-count="99">0</b><span data-i18n="c2">% точност на български</span>
+      <i class="csrc" data-i18n="c2s">Whisper large · вътрешни тестове, качествен микрофон</i>
+    </div>
+    <div class="counter">
+      <b data-count="6">0</b><span data-i18n="c3">езика за превод и прочит</span>
+      <i class="csrc">БГ · EN · DE · ES · FR · RU</i>
+    </div>
+  </div>
+
+  <!-- жив брояч: реално число от бета статистиката -->
+  <div class="livewords">
+    <b data-count="35544">0</b>
+    <span data-i18n="lw">думи, издиктувани в бета тестовете до момента</span>
+  </div>
+</section>
+
+<!-- ═══════════════ СРАВНЕНИЕ — MULTI-TOOL ═══════════════ -->
+<section class="compare" id="compare">
+  <h2 data-i18n="cmp_title">Multi-tool<br><span class="cmp-sub">(„вашето швейцарско ножче“)</span></h2>
+  <p class="section-sub" data-i18n="cmp_sub">Другите правят диктовка. TapeType носи и коректор, преводач, глас, речник и снипети — инструменти, които нито Wispr Flow, нито вградената Windows диктовка имат.</p>
+  <div class="cmp-wrap">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="us">TapeType</th>
+          <th>Wispr Flow</th>
+          <th data-i18n="cmp_win">Windows диктовка</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td data-i18n="r1">Диктовка на български с AI изглаждане</td><td class="us">✓</td><td class="half" data-i18n="cmp_partial">частично</td><td class="no">✗</td></tr>
+        <tr><td data-i18n="r2">Коректор на маркиран текст (тонове, преглед)</td><td class="us">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+        <tr><td data-i18n="r3">Преводач на селекция (6 езика, балонче)</td><td class="us">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+        <tr><td data-i18n="r4">Текст → глас (невронни гласове)</td><td class="us">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+        <tr><td data-i18n="r5">Личен речник и гласови снипети</td><td class="us">✓</td><td class="half" data-i18n="cmp_partial2">речник</td><td class="no">✗</td></tr>
+        <tr><td data-i18n="r6">Разпознаване ЛОКАЛНО — гласът остава при теб</td><td class="us">✓</td><td class="no" data-i18n="cmp_cloud">✗ облак</td><td class="no" data-i18n="cmp_cloud2">✗ облак</td></tr>
+        <tr><td data-i18n="r7">Работи във всяко Windows приложение</td><td class="us">✓</td><td class="us2">✓</td><td class="us2">✓</td></tr>
+        <tr><td data-i18n="r8">Цена</td><td class="us" data-i18n="cmp_price_us">безплатна диктовка · Premium еднократно</td><td data-i18n="cmp_price_wf">$12/месец</td><td data-i18n="cmp_price_win">безплатна</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════ ДИКТОВКАТА В ДЕТАЙЛ ═══════════════ -->
+<section class="dictation" id="dictation">
+  <h2 data-i18n="dict_title">Не стенограф. Редактор.</h2>
+  <p class="section-sub" data-i18n="dict_sub">Суровата реч е разхвърляна. TapeType я предава както би я написал добър редактор — докато още говориш.</p>
+
+  <!-- преди/после на живо: суровата реч се пренаписва в чист текст -->
+  <div class="ba-demo">
+    <div class="ba-tag" data-i18n="ba_raw">КАКВОТО КАЗВАШ</div>
+    <p class="ba-text" id="baText"></p>
+    <div class="ba-tag ba-tag2" id="baTag2" data-i18n="ba_clean">КАКВОТО СЕ ПОЯВЯВА</div>
+  </div>
+
+  <div class="edit-cards">
+    <article class="ecard">
+      <h3 data-i18n="e1t">Самопоправки</h3>
+      <p class="was">„среща в 2… <s data-i18n="e1s">всъщност</s> 3“</p>
+      <p class="now">→ „Среща в 3.“</p>
+      <p class="edesc" data-i18n="e1d">Промениш ли си мнението на глас, остава само финалната версия.</p>
+    </article>
+    <article class="ecard">
+      <h3 data-i18n="e2t">Без паразити</h3>
+      <p class="was">„<s>ъъъ</s> значи <s>как да кажа</s> готово е“</p>
+      <p class="now">→ „Готово е.“</p>
+      <p class="edesc" data-i18n="e2d">„Ъъъ“, „ммм“ и заекванията изчезват. Текстът е чист от първия път.</p>
+    </article>
+    <article class="ecard">
+      <h3 data-i18n="e3t">Списъци с глас</h3>
+      <p class="was">„едно ябълки две банани“</p>
+      <p class="now">→ 1. Ябълки<br>&nbsp;&nbsp;&nbsp;&nbsp;2. Банани</p>
+      <p class="edesc" data-i18n="e3d">Кажи числата — получаваш форматиран списък.</p>
+    </article>
+    <article class="ecard">
+      <h3 data-i18n="e4t">Стилове</h3>
+      <p class="was" data-i18n="e4was">авто · официален · професионален · разговорен</p>
+      <p class="now" data-i18n="e4now">→ същото съдържание, точният тон</p>
+      <p class="edesc" data-i18n="e4d">Един бутон сменя регистъра на цялата диктовка.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ═══════════════ КАЛКУЛАТОР ═══════════════ -->
+<section class="calc" id="calc">
+  <h2 data-i18n="calc_title">Колко време ще си върнеш?</h2>
+  <p class="section-sub" data-i18n="calc_sub">Премести плъзгача според това колко часа на ден прекарваш в писане.</p>
+  <div class="calc-box">
+    <label class="calc-row">
+      <span data-i18n="calc_l1">Писане на ден</span>
+      <input type="range" id="calcHours" min="0.5" max="6" step="0.5" value="2">
+      <b id="calcHoursVal">2 ч</b>
+    </label>
+    <div class="calc-out">
+      <div><b id="calcMonth">—</b><span data-i18n="calc_o1">часа спестени на месец</span></div>
+      <div><b id="calcYear">—</b><span data-i18n="calc_o2">работни дни на година</span></div>
+    </div>
+    <p class="calc-note" data-i18n="calc_note">Сметка: съчиняване на клавиатура ~25 думи/мин срещу говорене 120+ думи/мин — говоренето връща ~4 от всеки 5 минути писане.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ ЗА КОГО ═══════════════ -->
+<section class="usecases" id="usecases">
+  <h2 data-i18n="uc_title">За кого е TapeType</h2>
+  <div class="uc-grid">
+    <article class="uc"><b data-i18n="uc1t">Бизнес кореспонденция</b><p data-i18n="uc1d">Имейли и оферти на БГ и EN — издиктувани, изгладени, форматирани като писма.</p></article>
+    <article class="uc"><b data-i18n="uc2t">Чатове и социалки</b><p data-i18n="uc2d">Дълги отговори в Slack, Viber, коментари — със скоростта на говора.</p></article>
+    <article class="uc"><b data-i18n="uc3t">Работа с клиенти на чужд език</b><p data-i18n="uc3d">Маркираш съобщение → мигновен превод; отговаряш на БГ, излиза на EN.</p></article>
+    <article class="uc"><b data-i18n="uc4t">Умора и RSI</b><p data-i18n="uc4d">Болки в китките, дълги дни на клавиатура — гласът поема товара.</p></article>
+    <article class="uc"><b data-i18n="uc5t">Дълги документи</b><p data-i18n="uc5d">Доклади и описания се диктуват на части; коректорът ги шлайфа след това.</p></article>
+    <article class="uc"><b data-i18n="uc6t">Четене на дълги текстове</b><p data-i18n="uc6d">Маркирай статия → невронен глас я чете, докато правиш друго.</p></article>
+  </div>
+</section>
+
+<!-- ═══════════════ ЗАЩО TAPETYPE ═══════════════ -->
+<section class="why" id="why">
+  <h2 data-i18n="why_title">Защо TapeType</h2>
+  <div class="why-list">
+    <div class="wrow"><i>01</i><div><b data-i18n="w1t">Гласът не напуска компютъра</b><p data-i18n="w1d">Разпознаването е локално, на твоята машина. Записът не пътува и не се съхранява никъде.</p></div></div>
+    <div class="wrow"><i>02</i><div><b data-i18n="w2t">Шест инструмента в един</b><p data-i18n="w2d">Диктовка, коректор, преводач, глас, речник, снипети — един продукт, един клавиш разстояние.</p></div></div>
+    <div class="wrow"><i>03</i><div><b data-i18n="w3t">Български на световно ниво</b><p data-i18n="w3d">Качеството на корекцията е мерено дума по дума срещу водещия инструмент за БГ.</p></div></div>
+    <div class="wrow"><i>04</i><div><b data-i18n="w4t">Във всяко приложение</b><p data-i18n="w4d">Не е сайт, не е отделен прозорец — работи там, където пишеш: Word, Gmail, чатове, CRM.</p></div></div>
+    <div class="wrow"><i>05</i><div><b data-i18n="w5t">Без абонамент-принуда</b><p data-i18n="w5d">Диктовката е безплатна завинаги; Premium е с офлайн ключ, който е твой.</p></div></div>
+    <div class="wrow"><i>06</i><div><b data-i18n="w6t">Идентичност, не шаблон</b><p data-i18n="w6d">Касетофонът не е декорация — това е инструмент с характер, който помниш.</p></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════ ПОВЕРИТЕЛНОСТ ═══════════════ -->
+<section class="privacy" id="privacy">
+  <div class="privacy-card">
+    <svg viewBox="0 0 48 48" class="lock" aria-hidden="true">
+      <rect x="10" y="20" width="28" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="2.6"/>
+      <path d="M16 20v-5a8 8 0 0 1 16 0v5" fill="none" stroke="currentColor" stroke-width="2.6"/>
+      <circle cx="24" cy="31" r="3.4" fill="currentColor"/>
+    </svg>
+    <h2 data-i18n="priv_title">Гласът ти не напуска компютъра</h2>
+    <p data-i18n="priv_sub">Разпознаването върви локално, на твоята машина — не в нечий чужд облак. Записът никъде не пътува, никъде не се съхранява, никой не го чува. Интернет е нужен само за AI изглаждането — и то минава през защитен канал.</p>
+    <p class="priv-note" data-i18n="priv_note">Историята на диктовките живее само при теб и се трие с един клик.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="faq" id="faq">
+  <h2 data-i18n="faq_title">Чести въпроси</h2>
+  <div class="faq-list">
+    <details><summary data-i18n="q1">Трябва ли ми мощен компютър?</summary><p data-i18n="a1">За най-добро качество — NVIDIA видеокарта с 6+ GB памет. Без такава TapeType автоматично минава на по-лек режим: работи, но по-бавно и по-неточно.</p></details>
+    <details><summary data-i18n="q2">Работи ли без интернет?</summary><p data-i18n="a2">Разпознаването на речта — да, изцяло офлайн. Интернет трябва само за AI изглаждането, коректора и преводача.</p></details>
+    <details><summary data-i18n="q3">Къде отиват записите ми?</summary><p data-i18n="a3">Никъде. Гласът се обработва на твоята машина и не се съхранява. Историята на текстовете стои само при теб и се трие с един клик.</p></details>
+    <details><summary data-i18n="q4">Кои езици поддържа?</summary><p data-i18n="a4">Диктовка на български и английски (езикът се разпознава сам); превод и прочит на глас: БГ, EN, DE, ES, FR, RU.</p></details>
+    <details><summary data-i18n="q5">Работи ли с моите слушалки?</summary><p data-i18n="a5">Да — режим „авто“ следва слушалките, които носиш в момента, включително Bluetooth. За максимална точност препоръчваме микрофона на лаптопа или кабелен.</p></details>
+    <details><summary data-i18n="q6">Какво става след 14-те дни?</summary><p data-i18n="a6">Диктовката остава безплатна завинаги. Премиум функциите (коректор, преводач, глас…) се отключват с еднократен ключ — без абонамент, без карта за пробния период.</p></details>
+    <details><summary data-i18n="q7">Работи ли във всички програми?</summary><p data-i18n="a7">Да — Word, Gmail, браузъри, чатове, CRM системи. Текстът се вмъква там, където е курсорът ти.</p></details>
+    <details><summary data-i18n="q8">Мога ли да сменям клавишите?</summary><p data-i18n="a8">Всички клавишни комбинации се пренастройват, включително бутони на мишката за всяка функция.</p></details>
+  </div>
+</section>
+
+<!-- ═══════════════ DOWNLOAD ═══════════════ -->
+<section class="download" id="download">
+  <h2 data-i18n="dl_title">Сложи касетата.<br>Изхвърли клавиатурата.</h2>
+  <p class="section-sub" data-i18n="dl_sub">Безплатна диктовка завинаги. Пълните шест инструмента — 14 дни без ограничения.</p>
+  <a class="cta big" href="https://github.com/DataForceStudio/tapetype-releases/releases/latest/download/TapeType-Setup.exe" data-i18n="dl_cta">Изтегли за Windows</a>
+  <p class="dl-req" data-i18n="dl_req">Windows 10/11 · NVIDIA видеокарта за най-добро качество (работи и без)</p>
+</section>
+
+<footer>
+  <span>Tap<em>e</em>Typ<em>e</em></span>
+  <span>© 2026 DataForce Studio® · All rights reserved</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
