@@ -107,6 +107,164 @@ Object.assign(I18N.en, {
   q8: "Can I change the hotkeys?", a8: "Every hotkey is remappable, including mouse buttons per function.",
 });
 
+// ── Русский ────────────────────────────────────────────
+I18N.ru = {
+  nav_features: "Функции", nav_speed: "Скорость", nav_compare: "Сравнение",
+  nav_faq: "Вопросы", nav_download: "Скачать для Windows",
+  hero_kicker: "КАССЕТА КРУТИТСЯ. ВЫ ПРОСТО ГОВОРИТЕ.",
+  hero_line1: "Не печатайте.", hero_line2: "Говорите.",
+  hero_sub: "Диктовка, корректор, переводчик и живой голос — шесть профессиональных инструментов под одной крышей, в любом приложении Windows. А ваш голос не покидает компьютер.",
+  hero_cta: "Скачать для Windows", hero_cta2: "Как это работает",
+  hero_note: "Бесплатная диктовка · 14 дней полного Premium · без карты",
+  ribbon: "привет запятая отправляю тебе предложение сегодня… → Привет, отправляю тебе предложение сегодня. · эээ встреча в 2… нет, в 3 → Встреча в 3. · раз яблоки два бананы → 1. Яблоки 2. Бананы · ",
+  roof_title: "Шесть инструментов.<br>Одна дека.",
+  roof_sub: "Другие делают одно. TapeType — швейцарский нож для голоса: каждый инструмент в одной клавише, в любом приложении.",
+  k1: "Диктовка", k2: "Корректор", k3: "Переводчик", k4: "Текст → голос", k5: "Словарь", k6: "Сниппеты", k6kbd: "голос",
+  fn_dictation: "Говорите в ЛЮБОМ приложении — текст появляется чистым: без «э-э», самопоправки применены, пунктуация на месте. Письма выходят оформленными как письма.",
+  fn_corrector: "Выделите текст где угодно → всплывающее окно показывает исправленную версию до замены. Выберите тон: авто, официальный, дружеский.",
+  fn_translator: "Выделите → мгновенный перевод во всплывающем окне: 6 языков, направление определяется само. Вставить, озвучить, скопировать.",
+  fn_reader: "Выделите → естественный нейронный голос читает вслух. Язык определяется сам, мужской или женский голос, прогресс с оценкой времени.",
+  fn_dictionary: "Ваши термины, имена и бренды распознаются и пишутся точно — модель учит ваш словарь.",
+  fn_snippets: "Скажите «моя почта» — вставляется весь адрес. Голосовые сокращения для всего, что вы повторяете.",
+  speed_title: "Мысль быстрее пальцев",
+  speed_sub: "Средний человек печатает ~25 слов в минуту. Речь — больше 120. TapeType возвращает разницу вам.",
+  lane1: "Клавиатура", wpm: "сл/мин",
+  c1: "раз быстрее печати", c2: "% точности", c3: "языка для перевода и озвучки",
+  c1s: "против ~25 сл/мин набора на клавиатуре (Karat et al.)",
+  c2s: "Whisper large · внутренние тесты, хороший микрофон",
+  lw: "слов надиктовано в бета-тестах на данный момент",
+  cmp_title: 'Мульти-тул<br><span class="cmp-sub">(«ваш швейцарский нож»)</span>',
+  cmp_sub: "Другие делают диктовку. TapeType добавляет корректор, переводчик, голос, словарь и сниппеты — инструменты, которых нет ни у Wispr Flow, ни у встроенной диктовки Windows.",
+  cmp_win: "Диктовка Windows",
+  r1: "Диктовка с AI-шлифовкой", r2: "Корректор выделенного текста (тона, превью)", r3: "Переводчик выделения (6 языков)", r4: "Текст → голос (нейронные голоса)", r5: "Личный словарь и голосовые сниппеты", r6: "Распознавание ЛОКАЛЬНО — голос остаётся у вас", r7: "Работает в любом приложении Windows", r8: "Цена",
+  cmp_partial: "частично", cmp_partial2: "словарь", cmp_cloud: "✗ облако", cmp_cloud2: "✗ облако",
+  cmp_price_us: "бесплатная диктовка · Premium разово", cmp_price_wf: "$12/мес", cmp_price_win: "бесплатно",
+  how_title: "От загрузки до первой диктовки — 3 минуты",
+  h1t: "Скачайте и установите", h1d: "Один установщик, без настроек, без карты. Модель скачивается один раз при первом запуске.",
+  h2t: "Нажмите клавишу", h2d: "Где бы вы ни писали — почта, чат, документ — нажмите ALT+WIN. Панель загорается: запись.",
+  h3t: "Говорите", h3d: "Скажите как есть. Текст появляется чистым, с пунктуацией, без «э-э» — готов к отправке.",
+  ba_raw: "ЧТО ВЫ ГОВОРИТЕ", ba_clean: "ЧТО ПОЯВЛЯЕТСЯ",
+  calc_title: "Сколько времени вы вернёте?",
+  calc_sub: "Двигайте ползунок по тому, сколько часов в день вы пишете.",
+  calc_l1: "Письмо в день", calc_o1: "часов сэкономлено в месяц", calc_o2: "рабочих дней в год",
+  calc_note: "Расчёт: набор на клавиатуре ~25 сл/мин против 120+ сл/мин речи — говорение возвращает ~4 из каждых 5 минут письма.",
+  uc_title: "Для кого TapeType",
+  uc1t: "Деловая переписка", uc1d: "Письма и предложения — надиктованы, отшлифованы, оформлены как письма.",
+  uc2t: "Чаты и соцсети", uc2d: "Длинные ответы в Slack, мессенджерах, комментарии — со скоростью речи.",
+  uc3t: "Клиенты на другом языке", uc3d: "Выделите сообщение → мгновенный перевод; отвечаете на своём, выходит на нужном.",
+  uc4t: "Усталость и RSI", uc4d: "Боль в запястьях, долгие дни за клавиатурой — голос берёт нагрузку.",
+  uc5t: "Длинные документы", uc5d: "Отчёты и описания диктуются частями; корректор шлифует их потом.",
+  uc6t: "Чтение длинных текстов", uc6d: "Выделите статью → нейронный голос читает, пока вы заняты другим.",
+  why_title: "Почему TapeType",
+  w1t: "Голос не покидает компьютер", w1d: "Распознавание локальное, на вашей машине. Запись никуда не уходит и нигде не хранится.",
+  w2t: "Шесть инструментов в одном", w2d: "Диктовка, корректор, переводчик, голос, словарь, сниппеты — один продукт, одна клавиша.",
+  w3t: "Качество мирового уровня", w3d: "Качество коррекции измерено слово за словом против ведущего инструмента.",
+  w4t: "В любом приложении", w4d: "Не сайт, не отдельное окно — работает там, где вы пишете: Word, почта, чаты, CRM.",
+  w5t: "Без привязки к подписке", w5d: "Диктовка бесплатна навсегда; Premium — офлайн-ключ, который ваш.",
+  w6t: "Характер, а не шаблон", w6d: "Кассетная дека — не украшение, это инструмент с характером, который запоминается.",
+  faq_title: "Частые вопросы",
+  q1: "Нужен ли мощный компьютер?", a1: "Для лучшего качества — видеокарта NVIDIA с 6+ ГБ. Без неё TapeType переходит в лёгкий режим: работает, но медленнее и менее точно.",
+  q2: "Работает ли офлайн?", a2: "Распознавание речи — да, полностью офлайн. Интернет нужен только для AI-шлифовки, корректора и переводчика.",
+  q3: "Куда уходят мои записи?", a3: "Никуда. Голос обрабатывается на вашей машине и не хранится. История текстов остаётся только у вас и стирается одним кликом.",
+  q4: "Какие языки?", a4: "Диктовка на болгарском и английском (язык определяется сам); перевод и озвучка: BG, EN, DE, ES, FR, RU.",
+  q5: "Работает ли с моей гарнитурой?", a5: "Да — режим «авто» следует за наушниками, которые вы носите, включая Bluetooth. Для максимальной точности рекомендуем микрофон ноутбука или проводной.",
+  q6: "Что после 14 дней?", a6: "Диктовка остаётся бесплатной навсегда. Premium (корректор, переводчик, голос…) открывается разовым ключом — без подписки, без карты для пробного периода.",
+  q7: "Работает во всех программах?", a7: "Да — Word, почта, браузеры, чаты, CRM. Текст вставляется прямо туда, где курсор.",
+  q8: "Можно ли менять клавиши?", a8: "Все горячие клавиши настраиваемые, включая кнопки мыши для каждой функции.",
+  dict_title: "Не стенографист. Редактор.",
+  dict_sub: "Сырая речь беспорядочна. TapeType подаёт её так, как написал бы хороший редактор — пока вы ещё говорите.",
+  e1t: "Самопоправки", e1s: "нет", e1d: "Передумали вслух — остаётся только финальная версия.",
+  e2t: "Без слов-паразитов", e2d: "«Э-э», «ну» и запинки исчезают. Чистый текст с первого раза.",
+  e3t: "Списки голосом", e3d: "Назовите числа — получите форматированный список.",
+  e4t: "Стили", e4was: "авто · официальный · деловой · разговорный", e4now: "→ то же содержание, точный тон", e4d: "Одна кнопка меняет регистр всей диктовки.",
+  priv_title: "Ваш голос не покидает компьютер",
+  priv_sub: "Распознавание работает локально, на вашей машине — не в чужом облаке. Запись никуда не путешествует, нигде не хранится, никто её не слышит. Интернет нужен только для AI-шлифовки — через защищённый канал.",
+  priv_note: "История диктовок живёт только у вас и стирается одним кликом.",
+  dl_title: "Вставьте кассету.<br>Выбросьте клавиатуру.",
+  dl_sub: "Бесплатная диктовка навсегда. Все шесть инструментов — 14 дней без ограничений.",
+  dl_cta: "Скачать для Windows",
+  dl_req: "Windows 10/11 · видеокарта NVIDIA для лучшего качества (работает и без неё)",
+};
+
+// ── Español ────────────────────────────────────────────
+I18N.es = {
+  nav_features: "Funciones", nav_speed: "Velocidad", nav_compare: "Comparar",
+  nav_faq: "Preguntas", nav_download: "Descargar para Windows",
+  hero_kicker: "LA CINTA GIRA. TÚ SOLO HABLAS.",
+  hero_line1: "No escribas.", hero_line2: "Habla.",
+  hero_sub: "Dictado, corrector, traductor y una voz viva: seis herramientas profesionales bajo un mismo techo, en cualquier app de Windows. Y tu voz nunca sale de tu ordenador.",
+  hero_cta: "Descargar para Windows", hero_cta2: "Cómo funciona",
+  hero_note: "Dictado gratis · 14 días de Premium completo · sin tarjeta",
+  ribbon: "hola coma te envío la oferta hoy… → Hola, te envío la oferta hoy. · eh reunión a las 2… mejor a las 3 → Reunión a las 3. · uno manzanas dos plátanos → 1. Manzanas 2. Plátanos · ",
+  roof_title: "Seis herramientas.<br>Una pletina.",
+  roof_sub: "Otros hacen una cosa. TapeType es la navaja suiza de la voz: cada herramienta a una tecla, en cualquier aplicación.",
+  k1: "Dictado", k2: "Corrector", k3: "Traductor", k4: "Texto → voz", k5: "Diccionario", k6: "Snippets", k6kbd: "voz",
+  fn_dictation: "Habla en CUALQUIER app: el texto aparece limpio, sin «eh», con las autocorrecciones aplicadas y la puntuación en su sitio. Los correos salen con formato de carta.",
+  fn_corrector: "Selecciona texto en cualquier sitio → una burbuja muestra la versión corregida antes de reemplazar nada. Elige el tono: auto, formal, cercano.",
+  fn_translator: "Selecciona → traducción instantánea en burbuja: 6 idiomas, dirección detectada sola. Insértala, escúchala, cópiala.",
+  fn_reader: "Selecciona → una voz neuronal natural lo lee en alto. Idioma detectado solo, voz masculina o femenina, progreso con tiempo estimado.",
+  fn_dictionary: "Tus términos, nombres y marcas reconocidos y escritos con exactitud: el modelo aprende tu vocabulario.",
+  fn_snippets: "Di «mi correo» y se escribe la dirección completa. Atajos de voz para todo lo que repites.",
+  speed_title: "El pensamiento va más rápido que los dedos",
+  speed_sub: "Una persona media redacta a ~25 palabras por minuto en el teclado. El habla supera las 120. TapeType te devuelve la diferencia.",
+  lane1: "Teclado", wpm: "ppm",
+  c1: "veces más rápido que teclear", c2: "% de precisión", c3: "idiomas para traducir y leer",
+  c1s: "frente a ~25 ppm redactando en teclado (Karat et al.)",
+  c2s: "Whisper large · pruebas internas, micrófono decente",
+  lw: "palabras dictadas en las pruebas beta hasta ahora",
+  cmp_title: 'Multiherramienta<br><span class="cmp-sub">(«tu navaja suiza»)</span>',
+  cmp_sub: "Otros hacen dictado. TapeType añade corrector, traductor, voz, diccionario y snippets: herramientas que ni Wispr Flow ni el dictado de Windows tienen.",
+  cmp_win: "Dictado de Windows",
+  r1: "Dictado con pulido por IA", r2: "Corrector de texto seleccionado (tonos, vista previa)", r3: "Traductor de selección (6 idiomas)", r4: "Texto → voz (voces neuronales)", r5: "Diccionario personal y snippets de voz", r6: "Reconocimiento LOCAL: tu voz se queda contigo", r7: "Funciona en cualquier app de Windows", r8: "Precio",
+  cmp_partial: "parcial", cmp_partial2: "diccionario", cmp_cloud: "✗ nube", cmp_cloud2: "✗ nube",
+  cmp_price_us: "dictado gratis · Premium pago único", cmp_price_wf: "$12/mes", cmp_price_win: "gratis",
+  how_title: "De la descarga al primer dictado: 3 minutos",
+  h1t: "Descarga e instala", h1d: "Un instalador, sin configuración, sin tarjeta. El modelo se descarga una vez en el primer arranque.",
+  h2t: "Pulsa la tecla", h2d: "Donde sea que escribas —correo, chat, documento— pulsa ALT+WIN. La barra se enciende: grabando.",
+  h3t: "Habla", h3d: "Dilo como te salga. El texto aparece limpio, con puntuación, sin «eh»: listo para enviar.",
+  ba_raw: "LO QUE DICES", ba_clean: "LO QUE APARECE",
+  calc_title: "¿Cuánto tiempo recuperarás?",
+  calc_sub: "Mueve el control según cuántas horas al día pasas escribiendo.",
+  calc_l1: "Escritura al día", calc_o1: "horas ahorradas al mes", calc_o2: "días laborables al año",
+  calc_note: "Cálculo: teclear ~25 ppm frente a hablar 120+ ppm — hablar devuelve ~4 de cada 5 minutos de escritura.",
+  uc_title: "Para quién es TapeType",
+  uc1t: "Correspondencia profesional", uc1d: "Correos y ofertas dictados, pulidos y con formato de carta.",
+  uc2t: "Chats y redes", uc2d: "Respuestas largas en Slack, mensajería, comentarios: a la velocidad del habla.",
+  uc3t: "Clientes en otro idioma", uc3d: "Selecciona un mensaje → traducción instantánea; respondes en tu idioma y sale en el suyo.",
+  uc4t: "Fatiga y lesiones (RSI)", uc4d: "Dolor de muñecas, días largos de teclado: la voz asume la carga.",
+  uc5t: "Documentos largos", uc5d: "Informes y descripciones se dictan por partes; el corrector los pule después.",
+  uc6t: "Leer textos largos", uc6d: "Selecciona un artículo → una voz neuronal lo lee mientras haces otra cosa.",
+  why_title: "Por qué TapeType",
+  w1t: "Tu voz nunca sale del ordenador", w1d: "El reconocimiento es local, en tu máquina. La grabación no viaja ni se almacena en ningún sitio.",
+  w2t: "Seis herramientas en una", w2d: "Dictado, corrector, traductor, voz, diccionario, snippets: un producto, a una tecla.",
+  w3t: "Calidad de primer nivel", w3d: "Calidad de corrección medida palabra por palabra frente a la herramienta líder.",
+  w4t: "En todas las aplicaciones", w4d: "No es una web ni una ventana aparte: funciona donde escribes: Word, correo, chats, CRM.",
+  w5t: "Sin ataduras de suscripción", w5d: "El dictado es gratis para siempre; Premium es una clave offline que es tuya.",
+  w6t: "Identidad, no una plantilla", w6d: "La pletina de casete no es decoración: es una herramienta con carácter que recuerdas.",
+  faq_title: "Preguntas frecuentes",
+  q1: "¿Necesito un ordenador potente?", a1: "Para la mejor calidad, una GPU NVIDIA con 6+ GB. Sin ella TapeType pasa a un modo ligero: funciona, pero más lento y con menos precisión.",
+  q2: "¿Funciona sin internet?", a2: "El reconocimiento de voz, sí, totalmente offline. Internet solo hace falta para el pulido por IA, el corrector y el traductor.",
+  q3: "¿Adónde van mis grabaciones?", a3: "A ninguna parte. Tu voz se procesa en tu máquina y no se almacena. El historial de textos queda solo contigo y se borra con un clic.",
+  q4: "¿Qué idiomas admite?", a4: "Dictado en búlgaro e inglés (idioma detectado solo); traducción y lectura: BG, EN, DE, ES, FR, RU.",
+  q5: "¿Funciona con mis auriculares?", a5: "Sí: el modo «auto» sigue los auriculares que llevas puestos, incluido Bluetooth. Para máxima precisión recomendamos el micro del portátil o uno con cable.",
+  q6: "¿Qué pasa tras los 14 días?", a6: "El dictado sigue gratis para siempre. Las funciones Premium (corrector, traductor, voz…) se desbloquean con una clave de pago único: sin suscripción, sin tarjeta para la prueba.",
+  q7: "¿Funciona en todos los programas?", a7: "Sí: Word, correo, navegadores, chats, CRM. El texto se inserta justo donde está el cursor.",
+  q8: "¿Puedo cambiar los atajos?", a8: "Todos los atajos son reasignables, incluidos los botones del ratón por función.",
+  dict_title: "No un taquígrafo. Un editor.",
+  dict_sub: "El habla en bruto es un caos. TapeType la entrega como la escribiría un buen editor, mientras aún hablas.",
+  e1t: "Autocorrecciones", e1s: "mejor", e1d: "Cambias de idea en voz alta y solo queda la versión final.",
+  e2t: "Sin muletillas", e2d: "«Eh», «este» y los titubeos desaparecen. Texto limpio a la primera.",
+  e3t: "Listas por voz", e3d: "Di los números y obtienes una lista con formato.",
+  e4t: "Estilos", e4was: "auto · formal · profesional · casual", e4now: "→ mismo contenido, tono exacto", e4d: "Un botón cambia el registro de todo el dictado.",
+  priv_title: "Tu voz nunca sale de tu ordenador",
+  priv_sub: "El reconocimiento es local, en tu máquina, no en la nube de nadie. La grabación no viaja, no se almacena y nadie la escucha. Internet solo hace falta para el pulido por IA, por un canal seguro.",
+  priv_note: "Tu historial de dictados vive solo contigo y se borra con un clic.",
+  dl_title: "Mete la cinta.<br>Tira el teclado.",
+  dl_sub: "Dictado gratis para siempre. Las seis herramientas: 14 días sin límites.",
+  dl_cta: "Descargar para Windows",
+  dl_req: "Windows 10/11 · GPU NVIDIA para mejor calidad (también funciona sin ella)",
+};
+
 // БГ е в HTML-а по подразбиране; пазим оригиналите за връщане от EN
 const bgOriginals = {};
 document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -115,22 +273,25 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
 
 let lang = localStorage.getItem("tt_lang") || "bg";
 
+const LANGS = ["bg", "en", "ru", "es"];
+const LANG_LABEL = { bg: "БГ", en: "EN", ru: "RU", es: "ES" };
+if (!LANGS.includes(lang)) lang = "bg";
+
 function applyLang() {
   document.documentElement.lang = lang;
+  const dict = I18N[lang];  // undefined за bg -> връщаме оригиналния HTML
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n;
-    el.innerHTML = (lang === "en" && I18N.en[key] !== undefined)
-      ? I18N.en[key]
-      : bgOriginals[key];
+    el.innerHTML = (dict && dict[key] !== undefined) ? dict[key] : bgOriginals[key];
   });
-  document.getElementById("langBtn").textContent = lang === "bg" ? "EN" : "БГ";
+  document.getElementById("langBtn").textContent = LANG_LABEL[lang];
   localStorage.setItem("tt_lang", lang);
-  // екранът на дека пази активната функция на новия език
-  showFn(activeFn, false);
-  updateCalc();  // «2 ч» ↔ «2 h»
+  showFn(activeFn, false);   // екранът на дека — на новия език
+  updateCalc();              // суфикс на часовете спрямо езика
+  if (typeof baText !== "undefined" && baText) baText.innerHTML = (BA[lang] || BA.bg)[(baPhase + 2) % 3];
 }
 document.getElementById("langBtn").addEventListener("click", () => {
-  lang = lang === "bg" ? "en" : "bg";
+  lang = LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length];
   applyLang();
 });
 
@@ -142,8 +303,8 @@ function showFn(fn, animate = true) {
   activeFn = fn;
   document.querySelectorAll(".dkey").forEach(k =>
     k.classList.toggle("on", k.dataset.fn === fn));
-  const dict = lang === "en" ? I18N.en : I18N.bg;
-  screenEl.innerHTML = dict["fn_" + fn] || "";
+  const dict = I18N[lang] || I18N.bg;
+  screenEl.innerHTML = dict["fn_" + fn] || I18N.bg["fn_" + fn] || "";
   if (animate) {
     screenEl.style.animation = "none";
     void screenEl.offsetWidth;   // рестартира анимацията
@@ -215,7 +376,7 @@ function updateCalc() {
   if (!calcHours) return;
   const h = parseFloat(calcHours.value);
   document.getElementById("calcHoursVal").textContent =
-    h + (lang === "en" ? " h" : " ч");
+    h + (lang === "en" || lang === "es" ? " h" : " ч");
   const savedDaily = h * SAVE_RATE;
   document.getElementById("calcMonth").textContent = Math.round(savedDaily * 21);
   document.getElementById("calcYear").textContent =
@@ -234,6 +395,16 @@ const BA = {
     "um hi Ivan so I'm sending you the offer today… no wait tomorrow morning cause um we're waiting on a confirmation",
     "<s>um</s> hi Ivan <s>so</s> I'm sending you the offer <s>today… no wait</s> <span class=\"fix\">tomorrow morning</span> cause <s>um</s> we're waiting on a confirmation",
     "Hi Ivan,<br><br>I'm sending you the offer tomorrow morning — we're waiting on one confirmation.",
+  ],
+  ru: [
+    "эээ привет Иван значит отправляю тебе предложение сегодня… нет подожди завтра утром потому что эээ ждём одно подтверждение",
+    "<s>эээ</s> привет Иван <s>значит</s> отправляю тебе предложение <s>сегодня… нет подожди</s> <span class=\"fix\">завтра утром</span> потому что <s>эээ</s> ждём одно подтверждение",
+    "Привет, Иван,<br><br>Отправляю тебе предложение завтра утром — ждём одно подтверждение.",
+  ],
+  es: [
+    "eh hola Iván pues te envío la oferta hoy… no espera mañana por la mañana porque eh esperamos una confirmación",
+    "<s>eh</s> hola Iván <s>pues</s> te envío la oferta <s>hoy… no espera</s> <span class=\"fix\">mañana por la mañana</span> porque <s>eh</s> esperamos una confirmación",
+    "Hola Iván:<br><br>Te envío la oferta mañana por la mañana — esperamos una confirmación.",
   ],
 };
 let baPhase = 0;
